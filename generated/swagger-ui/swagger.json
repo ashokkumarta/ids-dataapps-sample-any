@@ -1,0 +1,97 @@
+{
+  "basePath" : "/",
+  "host" : "localhost:11101",
+  "info" : {
+    "description" : "This is the administrative REST API of the Trusted Connector.\n\nThe API provides an administrative interface to manage the Trusted Connector at runtime\nand is used by the default administration dashboard (\"web console\").\n",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Trusted Connector API",
+    "version" : "unspecified"
+  },
+  "paths" : {
+    "/**" : {
+      "get" : {
+        "operationId" : "provide",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "post" : {
+        "consumes" : [ "text/plain" ],
+        "operationId" : "consume",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "params",
+          "in" : "query",
+          "required" : true,
+          "type" : "object"
+        } ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "consumes" : [ "text/plain" ],
+        "operationId" : "process",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "params",
+          "in" : "query",
+          "required" : true,
+          "type" : "object"
+        } ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/help" : {
+      "get" : {
+        "operationId" : "help",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemes" : [ "http" ],
+  "swagger" : "2.0"
+}

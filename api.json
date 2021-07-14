@@ -1,0 +1,138 @@
+{
+  "components": {},
+  "servers": [
+    {
+      "description": "Generated server url",
+      "url": "http://localhost:11101"
+    }
+  ],
+  "openapi": "3.0.1",
+  "paths": {
+    "/help": {
+      "get": {
+        "operationId": "help",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ids-data-app-sample"
+        ]
+      }
+    },
+    "/**": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "operationId": "consume",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "additionalProperties": {
+                "type": "object"
+              },
+              "type": "object"
+            },
+            "in": "query",
+            "name": "params",
+            "required": true
+          }
+        ],
+        "tags": [
+          "ids-data-app-sample"
+        ]
+      },
+      "get": {
+        "operationId": "provide",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ids-data-app-sample"
+        ]
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "operationId": "process",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "additionalProperties": {
+                "type": "object"
+              },
+              "type": "object"
+            },
+            "in": "query",
+            "name": "params",
+            "required": true
+          }
+        ],
+        "tags": [
+          "ids-data-app-sample"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  }
+}
